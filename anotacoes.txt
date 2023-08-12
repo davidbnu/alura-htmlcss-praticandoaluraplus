@@ -1,0 +1,101 @@
+Aula 01 - Iniciando o projeto
+    Criando a pasta no computador e abrindo a pasta com o Visual Studio
+    Criando o arquivo index.html - Base com as tags DOCTYPE, html, head, body, title, meta, link
+    Criando o arquivo styles.css - Varíaveis CSS, resetcss, definindo as cores padrão de fundo e do texto.
+    Inserindo a imagem do combo e inserindo a imagem de fundo
+    As imagens são inseridas dentro de uma section principal.
+    A imagem de fundo ela é um background-image pois ela não possui valor para o conteúdo.
+    A imagem do combo ela é incluida na url pois ela passa informações para o usuário.
+        Se a imagem fizer sentido para o usuário, utilizar a tag img. Se não fizer sentido, utilizar o background-image
+    Cria se a classe container que será utilizada em todas as sessões da página.
+    Dentro a classe container - ajusta o background-imagem: height: 100vh; background-repeat: no-repeat;  background-size: contain;
+    
+Aula 02 - A dupla HTML e CSS
+    Incluir o botão Azul = <a href="https://www.alura.com.br">Assine por 12x de R$ 120,00*</a>
+        É utilizado uma ancora pois esse botão chama uma outra página. Nesse caso, existe uma "ancora".
+        Estilizando o botão:
+            .container__botao {
+                background-color: var(--botao-azul);
+                border-radius: 5px;
+                color: var(--branco-principal);
+                display: block;
+                padding: 1em;
+            }
+    Grid:Incluido a grid. Para isso é colocado uma div no contéudo. A div é necessária pois a grid vai dividir o conteudo conforme os elementos. 
+    Se não existir a div, vamos ter os tres elementos e dessa forma a divisão não fica adequada. Quando incluimos uma div e indicamos que queremos
+    duas colunas de 50%, a tela irá ficar corretamente alinhada.
+        html
+            <section class="principal container"> 
+                <div>
+                    <h1>Com o combo+ você pode aproveitar o Alura+ e o Alura Línguas com um preço único</h1>
+                    <img src="img/Combo.png" alt="O combo+ é a junção do Alura+ e o Alura Língua">
+                    <a class="container__botao" href="https://www.alura.com.br">Assine por 12x de R$ 120,00*</a>
+                </div>
+            </section>
+
+        css
+            .container {
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                }
+    
+    Inclusão do segundo botão     
+         <a class="container__botao container__botao-secundario" href="http://www.alura.com.br">Assinar somente o Alura+</a>
+         
+         .container__botao-secundario {
+            background-color: transparent;
+            border: 1px solid var(--branco-principal);
+        }
+    
+    Por fim a inclusão do texto de recomendações
+        <p class="container__aviso">*O preço pode variar caso a assinatura seja feita em outros planos</p>
+    
+    Importando e utilizando as fontes
+        Inter 400 e Inter 700
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        :root { --font-principal: 'Inter'; }
+
+        No body é colocado como padrão:
+            font-family: var(--font-principal);
+            font-size: 16px;
+            font-weight: 400;
+        
+        Mudando também os tamanhos das fontes do título e do texto de aviso
+            .container__titulo {
+                font-size: 28px;
+                font-weight: 700;
+            }
+
+            .container__aviso {
+                color: var(--cinza-secundario);
+                font-size: 12px;
+            }
+
+
+Aula 03 - Posicionamento elementos 
+    Retoques finais de posicionamento ou espaçamento
+        .container__caixa {
+            margin: 0.6em;
+        }
+
+Parei Aula 03 no Vídeo 04 - Alinhamentos
+    Para criar a sessão secundario, é inserido os elementos imagem, titulo e texto
+                <section class="secundario container">
+                    <img class="secundario__img" src="img/Plataformas.png" alt="Plataformas que a Alura atende">
+                    <div class="container__descricao">
+                        <h2 class="container__descricao-titulo">Assista do seu jeito</h2>
+                        <p class="container__descricao-descricao">Aproveite a tela grande da TV ou aproveite o tablet, celular e outros aparalhos. Nossa 
+                            plataforma não para de crescer.
+                        </p>
+                    </div>
+
+                </section>
+    
+    Veja que é reutilizado a classe container. ISso porque na classe container temos a definição da grid. 
+    Para a grid funcionar, tabém é incluido a div container__descricao. Dessa forma,o container__Descricao fica em um lado e a imagem fica do outro.
+    
+
+    A terceira parte da secundaria é a mesma coisa porém só inverte a imagem e o texto de lado.
+    No caso, é reutilizado todo os estilos feitos até então gerando "ganhos" de performance.
+    
+    
